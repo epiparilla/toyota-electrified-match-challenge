@@ -1,16 +1,30 @@
 name: Deploy Memory Game to Cloudflare Pages
-on: { push: { branches: [main] }, workflow_dispatch: {} }
-permissions: { contents: read }
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env: { CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }} }
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: npm }
+        with:
+          node-version: 22
+          cache: npm
       - run: npm ci
       - run: npm run build
-      - if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+      - name: Deploy to Cloudflare Pages
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
         uses: cloudflare/wrangler-action@v3
-        with: { apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}, accountId: e7e14bed97bb8f5583530bb47ebfb8e7, command: pages deploy dist --project-name=pevsmemgame --branch=main }
+        with:
+          apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
+          accountId: e7e14bed97bb8f5583530bb47ebfb8e7
+          command: pages deploy dist --project-name=pevsmemgame --branch=main
