@@ -1,0 +1,7 @@
+{
+  "appId": "com.toyota.pevs.matchchallenge",
+  "appName": "Toyota Electrified Match Challenge",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": { "androidScheme": "https" }
+}
