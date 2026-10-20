@@ -88,7 +88,100 @@ html, body {
 /* Use the full physical canvas on portrait touchscreen kiosks, while retaining
    the compact centered preview on ordinary desktop screens. */
 @media (min-width: 700px) and (orientation: portrait) {
+  :root {
+    --header-top-clearance: 72px;
+    --welcome-action-bottom-clearance: 96px;
+    font-size: clamp(19px, 2vw, 24px);
+  }
+
   .kiosk-wrapper { max-width: none; }
+
+  .kiosk-header {
+    margin-bottom: 26px;
+  }
+
+  .brand-row {
+    padding-bottom: 12px;
+  }
+
+  .brand-logo-image {
+    width: 174px;
+  }
+
+  /* A flex child with height: 100% is compressed by the header on this
+     Android WebView. Let the available kiosk height define the game area. */
+  .screen-container {
+    height: auto;
+    min-height: 0;
+    padding: 28px 48px;
+  }
+
+  .phase-instruction {
+    margin-bottom: 18px;
+  }
+
+  .grid-container {
+    width: min(100%, 860px);
+    align-self: center;
+    gap: 14px;
+    margin: 0 auto 24px;
+  }
+
+  .memory-card,
+  .memory-card-inner,
+  .card-face {
+    border-radius: 16px;
+  }
+
+  .card-photo-overlay {
+    padding: 8px 10px;
+  }
+
+  .card-photo-badge {
+    font-size: 0.82rem;
+  }
+
+  .card-model-name {
+    font-size: 1.12rem;
+  }
+
+  .countdown-pill {
+    min-height: 66px;
+    padding: 16px 34px;
+  }
+
+  .memory-welcome {
+    padding-left: 58px;
+    padding-right: 58px;
+  }
+
+  .memory-welcome-title h1 {
+    font-size: 3.45rem !important;
+  }
+
+  .memory-welcome-title p {
+    font-size: 1.18rem !important;
+    margin-top: 14px !important;
+  }
+
+  .memory-mission-target > div {
+    max-width: 370px !important;
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .memory-welcome-action .btn-toyota-red {
+    width: min(100%, 650px) !important;
+    max-width: none !important;
+    min-height: 98px;
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .memory-welcome-action .btn-toyota-red svg {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 /* Readability layer over the supplied perspective-grid background. */

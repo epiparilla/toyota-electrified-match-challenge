@@ -83,7 +83,7 @@ export default function WelcomeScreen({ onStartGame, testMode, targetPairs }) {
   }, [isHeroFading]);
 
   return (
-    <div className="screen-container" style={{ justifyContent: 'space-between', paddingBottom: 'var(--welcome-action-bottom-clearance)' }}>
+    <div className="screen-container memory-welcome" style={{ justifyContent: 'space-between', paddingBottom: 'var(--welcome-action-bottom-clearance)' }}>
       {testMode && (
         <div className="test-mode-bar">
           <span className="test-badge">QA Test Mode Active</span>
@@ -91,7 +91,7 @@ export default function WelcomeScreen({ onStartGame, testMode, targetPairs }) {
       )}
 
       {/* TITLE & CALLOUT */}
-      <div style={{ textAlign: 'center', marginTop: '6px' }}>
+      <div className="memory-welcome-title" style={{ textAlign: 'center', marginTop: '6px' }}>
         <h1 style={{
           fontFamily: 'var(--font-heading)',
           fontSize: '2.3rem',
@@ -145,7 +145,7 @@ export default function WelcomeScreen({ onStartGame, testMode, targetPairs }) {
       </div>
 
       {/* MISSION TARGET */}
-      <div style={{
+      <div className="memory-mission-target" style={{
         display: 'flex',
         justifyContent: 'center',
         margin: '4px 0'
@@ -185,7 +185,7 @@ export default function WelcomeScreen({ onStartGame, testMode, targetPairs }) {
       </div>
 
       {/* START CTA BUTTON */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '6px' }}>
+      <div className="memory-welcome-action" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '6px' }}>
         <button
           type="button"
           className="btn-toyota-red"
