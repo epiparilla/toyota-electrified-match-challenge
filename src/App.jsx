@@ -15,6 +15,7 @@ import {
   deleteCachedVideoById,
   clearAllCachedVideos
 } from './utils/videoStorage';
+import { useKioskViewport } from './utils/useKioskViewport';
 
 const DEFAULT_SETTINGS = {
   idleTimeout: 180, // Idle seconds before screen saver starts
@@ -31,6 +32,7 @@ const DEFAULT_SETTINGS = {
 };
 
 export default function App() {
+  useKioskViewport();
   // Load settings from localStorage with fallback
   const [settings, setSettings] = useState(() => {
     try {

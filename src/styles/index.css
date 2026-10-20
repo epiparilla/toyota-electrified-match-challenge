@@ -1453,3 +1453,87 @@ html, body {
   0% { transform: translateX(0); }
   100% { transform: translateX(6px); }
 }
+
+/* Large physical touchscreen calibration. This section intentionally remains
+   last so the measured kiosk dimensions win over the phone-first base rules. */
+@media (min-width: 700px) and (orientation: portrait) {
+  html[data-kiosk-viewport='large-portrait'] {
+    font-size: var(--kiosk-rem);
+  }
+
+  html[data-kiosk-viewport='large-portrait'] #root {
+    min-height: 100dvh;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .kiosk-wrapper {
+    width: var(--kiosk-canvas-width);
+    height: var(--kiosk-canvas-height);
+    max-width: var(--kiosk-canvas-width);
+    max-height: var(--kiosk-canvas-height);
+    flex: none;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .kiosk-header {
+    padding-top: var(--header-top-clearance);
+    margin-bottom: 24px;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .brand-logo-image {
+    width: var(--kiosk-logo-size);
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .screen-container {
+    height: auto;
+    min-height: 0;
+    padding: var(--kiosk-content-padding);
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .grid-container {
+    width: min(100%, var(--kiosk-grid-size));
+    height: var(--kiosk-grid-size);
+    aspect-ratio: auto;
+    flex: 0 0 var(--kiosk-grid-size);
+    align-self: center;
+    gap: 14px;
+    margin: 0 auto 24px;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-card,
+  html[data-kiosk-viewport='large-portrait'] .memory-card-inner,
+  html[data-kiosk-viewport='large-portrait'] .card-face {
+    border-radius: 16px;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome {
+    padding-left: var(--kiosk-content-padding);
+    padding-right: var(--kiosk-content-padding);
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome-title h1 {
+    font-size: 3.45rem !important;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome-title p {
+    font-size: 1.18rem !important;
+    margin-top: 14px !important;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-mission-target > div {
+    max-width: 370px !important;
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome-action .btn-toyota-red {
+    width: min(100%, var(--kiosk-button-width)) !important;
+    max-width: none !important;
+    min-height: 98px;
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome-action .btn-toyota-red svg {
+    width: 34px;
+    height: 34px;
+  }
+}
