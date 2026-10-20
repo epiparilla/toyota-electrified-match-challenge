@@ -1,4 +1,4 @@
-const CACHE_NAME = 'toyota-pevs-memory-game-v21';
+const CACHE_NAME = 'toyota-pevs-memory-game-v22';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
