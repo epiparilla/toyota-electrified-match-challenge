@@ -489,7 +489,7 @@ export default function SettingsModal({
         </div>
 
         {/* BUTTON ACTIONS */}
-        <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
+        <div className="settings-footer" style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
           <button
             type="button"
             className="btn-secondary"
