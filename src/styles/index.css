@@ -1548,7 +1548,7 @@ html, body {
 
   html[data-kiosk-viewport='large-portrait'] .hero-visual-wrap {
     width: 100%;
-    height: auto;
+    height: var(--kiosk-welcome-showcase-height);
     aspect-ratio: 16 / 9;
     flex: 0 0 auto;
     margin: 0.5rem 0;

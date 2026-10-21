@@ -15,7 +15,7 @@ export function useKioskViewport() {
 
       if (!isLargePortrait) {
         delete root.dataset.kioskViewport;
-        ['--kiosk-canvas-width', '--kiosk-canvas-height', '--kiosk-rem', '--kiosk-content-padding', '--kiosk-grid-size', '--kiosk-logo-size', '--header-top-clearance', '--welcome-action-bottom-clearance', '--kiosk-button-width', '--kiosk-button-height', '--kiosk-result-badge-size', '--kiosk-result-icon-size', '--kiosk-facilitator-control-size', '--kiosk-facilitator-icon-size', '--kiosk-facilitator-edge', '--kiosk-facilitator-bottom-offset', '--kiosk-settings-inline-edge', '--kiosk-settings-block-edge', '--kiosk-settings-card-padding', '--kiosk-screensaver-showcase-height'].forEach((property) => root.style.removeProperty(property));
+        ['--kiosk-canvas-width', '--kiosk-canvas-height', '--kiosk-rem', '--kiosk-content-padding', '--kiosk-grid-size', '--kiosk-logo-size', '--header-top-clearance', '--welcome-action-bottom-clearance', '--kiosk-button-width', '--kiosk-button-height', '--kiosk-result-badge-size', '--kiosk-result-icon-size', '--kiosk-facilitator-control-size', '--kiosk-facilitator-icon-size', '--kiosk-facilitator-edge', '--kiosk-facilitator-bottom-offset', '--kiosk-settings-inline-edge', '--kiosk-settings-block-edge', '--kiosk-settings-card-padding', '--kiosk-screensaver-showcase-height', '--kiosk-welcome-showcase-height'].forEach((property) => root.style.removeProperty(property));
         return;
       }
 
@@ -46,6 +46,7 @@ export function useKioskViewport() {
       root.style.setProperty('--kiosk-settings-block-edge', `${Math.round(height * 0.02)}px`);
       root.style.setProperty('--kiosk-settings-card-padding', `${Math.round(canvasWidth * 0.054)}px`);
       root.style.setProperty('--kiosk-screensaver-showcase-height', `${Math.round(canvasWidth * 0.88 * 9 / 16)}px`);
+      root.style.setProperty('--kiosk-welcome-showcase-height', `${Math.round(canvasWidth * 0.89 * 9 / 16)}px`);
     };
 
     updateViewport();
