@@ -1536,4 +1536,74 @@ html, body {
     width: 34px;
     height: 34px;
   }
+
+  /* 55-inch kiosk proportions, measured from the approved phone captures. */
+  html[data-kiosk-viewport='large-portrait'] .kiosk-header {
+    margin-bottom: 1.2rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome {
+    padding-top: 0;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .hero-visual-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0.5rem 0;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-mission-target > div {
+    width: 65%;
+    max-width: none !important;
+    padding: 0.55rem !important;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome-action .btn-toyota-red,
+  html[data-kiosk-viewport='large-portrait'] .result-screen .btn-toyota-red {
+    min-height: var(--kiosk-button-height);
+    font-size: 2.15rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .memory-welcome-action .btn-toyota-red svg,
+  html[data-kiosk-viewport='large-portrait'] .result-screen .btn-toyota-red svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .result-screen {
+    padding-bottom: var(--welcome-action-bottom-clearance);
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .result-badge-icon {
+    width: var(--kiosk-result-badge-size);
+    height: var(--kiosk-result-badge-size);
+    margin-bottom: 0.4rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .result-badge-icon svg {
+    width: var(--kiosk-result-icon-size);
+    height: var(--kiosk-result-icon-size);
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .result-screen-content {
+    gap: 1.1rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .result-headline {
+    font-size: 3.35rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .result-subtext {
+    max-width: 72%;
+    font-size: 1.08rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .stats-card {
+    padding: 0.65rem 1.15rem;
+  }
+
+  html[data-kiosk-viewport='large-portrait'] .screensaver-brand-logo {
+    width: var(--kiosk-logo-size);
+  }
 }
